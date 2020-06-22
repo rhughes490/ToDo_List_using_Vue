@@ -29,12 +29,12 @@ li button {
   cursor: pointer;
 }
 
-li.completed {
+li.low {
   border: 2px solid #1a681e;
   color: #1a681e;
 }
 
-li.not-completed {
+li.high {
   border: 2px solid #f2360c;
 }
 

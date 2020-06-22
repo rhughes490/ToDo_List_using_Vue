@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       todos: [
-        {name: "Buy Shopping", isCompleted: false},
-        {name: "Clean Bathroom", isCompleted: true},
-        {name: "Car's MOT", isCompleted: false}
+        {name: "Buy Shopping", isPriority: false},
+        {name: "Clean Bathroom", isPriority: false},
+        {name: "Car's MOT", isPriority: false}
       ],
       newTodo: ""
     },
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
       saveNewTodo: function(){
         this.todos.push({
           name: this.newTodo,
-          isCompleted: false
+          isPriority: false
         });
         this.newTodo = "";
       },
-      completeTodo: function(index){
-        this.todos[index].isCompleted = true;
+      makePriority: function(index){
+        this.todos[index].isPriority = true;
       }
     }
   });

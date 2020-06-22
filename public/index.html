@@ -11,19 +11,23 @@
 </head>
 <body>
   <div id="app">
-    <h1>To Do List</h1>
-    <ul>
-      <li v-for="(todo, index) in todos" :class="todo.isCompleted ? 'completed':'not-completed'" >
-        <span>{{ todo.name }}</span>
-        <span v-if="todo.isCompleted"> Completed!</span>
-        <button v-if="!todo.isCompleted" v-on:click="completeTodo(index)">Mark as Completed</button>
-      </li>
-    </ul>
+    <h1>ToDo's</h1>
     <form v-on:submit.prevent="saveNewTodo">
       <label for="new-todo">Add a new task:</label>
       <input id="new-todo" type="text" v-model="newTodo" />
-      <input type="submit" value ="Save New Todo" />
+      <label for="new-todo">High</label>
+      <input id="high" type="radio" v-model="newTodo" />
+      <label for="new-todo">Low</label>
+      <input id="low" type="radio" v-model="newTodo" />
+      <input type="submit" value ="Save Item" />
     </form>
+    <ul>
+      <li v-for="(todo, index) in todos" 
+      :class="todo.isPriority ? 'high':'low'">
+        <span>{{ todo.name }}</span>
+        <span v-if="todo.isPriority"> High Priority!</span>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
